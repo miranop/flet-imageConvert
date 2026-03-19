@@ -1,8 +1,9 @@
 import flet as ft
+from ui.home import home_view
 
 
 def main(page: ft.Page):
-    page.add(ft.Text("Hello, World!"))
+    page.add(home_view())
 
 
-ft.run(main)
+ft.run(main, view=ft.AppView.WEB_BROWSER)
