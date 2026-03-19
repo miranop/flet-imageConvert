@@ -1,6 +1,8 @@
 import flet as ft
 from dataclasses import dataclass, field
 
+from converters.image import convert_image
+
 
 @dataclass
 class State:
@@ -37,7 +39,9 @@ def home_view() -> ft.Control:
             file_list.update()
 
     def handle_convert(e):
-        pass
+        for f in state.picked_files:
+            convert_image(f.path, format_dropdown.value)
+
     return ft.Column([
         ft.ElevatedButton("ファイルを選択", on_click=handle_pick),
         file_list,

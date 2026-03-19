@@ -6,4 +6,4 @@ def main(page: ft.Page):
     page.add(home_view())
 
 
-ft.run(main, view=ft.AppView.WEB_BROWSER)
+ft.run(main)
